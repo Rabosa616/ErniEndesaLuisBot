@@ -25,12 +25,12 @@ namespace EndesaBot.Services
                     string month = entities.FirstOrDefault(item => item.Type == "DATE_TIME").Entity;
                     response = $"Su consumo del mes de {month} es de {_random.Nextint(10000, 200000)}";
                 }
-                else
-                {
-                    string month = DateTime.Now.AddMonths(-1).ToString("MMMM");
-                    response = $"Su último consumo es del {month} y es de: {_random.Nextint(10000, 200000)}";
-                };
             }
+            else
+            {
+                string month = DateTime.Now.AddMonths(-1).ToString("MMMM");
+                response = $"Su último consumo es del {month} y es de: {_random.Nextint(10000, 200000)}";
+            };
 
             return response;
         }
