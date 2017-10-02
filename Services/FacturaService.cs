@@ -20,12 +20,12 @@ namespace EndesaBot.Services
             if (entities.Any(item => item.Type == "DATE_TIME" && item.Entity.ParseMonth() !=0))
             {
                 string month = entities.FirstOrDefault(item => item.Type == "DATE_TIME").Entity;
-                response = $"La factura del mes de {month} es de {Math.Round(_random.NextDouble(0, 200), 2)}";
+                response = $"La factura del mes de {month} es de {Math.Round(_random.NextDouble(0, 200), 2)}€";
             }
             else
             {
                 string month = DateTime.Now.AddMonths(-1).ToString("MMMM");
-                response = $"Su última factura es del {month} y es de: {Math.Round(_random.NextDouble(0, 200), 2)}";
+                response = $"Su última factura es del {month} y es de: {Math.Round(_random.NextDouble(0, 200), 2)}€";
             };
             return response;
         }
